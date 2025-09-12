@@ -1,0 +1,29 @@
+name: CI/CD - Production
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' # Only run deploy job if the push is to 'main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH for password-based deployment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass  # Install sshpass to handle password-based SSH connections
+
+      - name: Deploy to Production
+        run: |
+          echo "Deploying to production server..."
+          sshpass -p "${{ secrets.PROD_SERVER_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.PROD_SERVER_USER }}"@${{ secrets.PROD_SERVER_HOST }} << 'EOF'
+            echo "Pulling the latest code..."
+            cd /var/www/html/profile-site && git pull
+            echo "Deployment to production finished!"
+          EOF
