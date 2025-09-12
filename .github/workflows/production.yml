@@ -22,7 +22,7 @@ jobs:
       - name: Deploy to Production
         run: |
           echo "Deploying to production server..."
-          sshpass -p "${{ secrets.PROD_SERVER_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.PROD_SERVER_USER }}"@${{ secrets.PROD_SERVER_HOST }} << 'EOF'
+          sshpass -p "${{ secrets.PROD_SERVER_PASSWORD }}" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "${{ secrets.PROD_SERVER_USER }}"@${{ secrets.PROD_SERVER_HOST }} << 'EOF'
             echo "Pulling the latest code..."
             cd /var/www/html/profile-site && git pull
             echo "Deployment to production finished!"
