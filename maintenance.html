@@ -9,6 +9,13 @@
     <meta property="og:image" content="./assets/img/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo-fav.ico">
+    <!-- Optional: PNG versions for better resolution -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <!-- Optional: For Apple devices -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800&amp;family=Outfit:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
@@ -17,6 +24,66 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div class="sidemenu-wrapper sidemenu-info d-none d-lg-block">
+        <div class="sidemenu-content">
+            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
+            <div class="widget">
+                <div class="ot-widget-about">
+                    <div class="about-logo">
+                        <a href="index.html"><img src="assets/img/logo.png" alt="Tronix"></a>
+                    </div>
+                    <p class="about-text">An IT consultancy can help you assess your technology needs and develop a technology strategy that aligns with your business</p>
+                    <div class="ot-social"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="widget">
+                <a href="request.html" class="ot-btn style3" style="width:100%;margin-bottom:15px;">Add Request</a>
+            </div>
+            <div class="widget">
+                <h3 class="widget_title">Contact Us</h3>
+                <div class="ot-widget-contact">
+                    <div class="info-box">
+                        <div class="info-box_icon"><i class="fas fa-location-dot"></i></div>
+                        <p class="info-box_text">113A Main Shahra-e-Faisal, Sindhi Muslim Cooperative Housing Society Karachi</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-box_icon"><i class="fas fa-phone"></i></div>
+                        <p class="info-box_text"><a href="tel:+9221111252575" class="info-box_link">(021) 111 252 575</a></p>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-box_icon"><i class="fas fa-envelope"></i></div>
+                        <p class="info-box_text"><a href="mailto:hello@immensecode.ai" class="info-box_link">hello@immensecode.ai</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="widget newsletter-widget">
+                <h3 class="widget_title">Newsletter</h3>
+                <p class="footer-text">Sign up to get update news about us</p>
+                <form class="newsletter-form">
+                    <input class="form-control" type="email" placeholder="Enter Email" required="">
+                    <button type="submit" class="ot-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="ot-menu-wrapper">
+        <div class="ot-menu-area text-center">
+            <button class="ot-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+                <a href="index.html"><img src="assets/img/logo.png" alt="Tronix"></a>
+            </div>
+            <div class="ot-mobile-menu">
+                <ul>
+                    <li class="menu-item-has-children"><a href="index.html">Home</a></li>
+                    <li><a href="maintenance.html">Product & Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <header class="ot-header header-layout2">
         <div class="sticky-wrapper">
             <div class="menu-area">
@@ -50,10 +117,10 @@
     </header>
     <main>
         <div class="maintenance-container" style="text-align:center; padding:60px 20px;">
-            <img src="assets/img/logo.png" alt="Logo" style="max-width:180px; margin-bottom:30px;">
-            <h1>We'll be back soon!</h1>
-            <p>Sorry for the inconvenience. We're performing some maintenance at the moment.<br>
-            We'll be back online shortly!</p>
+            <img src="./assets/img/icon/maintenance.png" alt="Logo" style="max-width:180px; margin-bottom:30px;">
+            <h1>We&#8217;ll be back soon!</h1>
+            <p>Sorry for the inconvenience. We&#8217;re performing some maintenance at the moment.<br>
+            We&#8217;ll be back online shortly!</p>
             <p style="margin-top:40px; color:#888;">&copy; 2025 ImmenseCode Web</p>
         </div>
     </main>
@@ -95,12 +162,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-auto widget-border"></div>
+                    <!-- <div class="col-auto widget-border"></div>
                     <div class="col-md-6 col-lg-auto">
                         <div class="widget footer-widget">
                             <h3 class="widget_title">Recent Posts</h3>
                             <div class="recent-post-wrap">
-                                <!-- <div class="recent-post">
+                                <div class="recent-post">
                                     <div class="media-img">
                                         <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a>
                                     </div>
@@ -108,11 +175,11 @@
                                         <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Building Renovation Tasks</a></h4>
                                         <div class="recent-post-meta"><a href="blog.html"><i class="far fa-calendar"></i>21 Jun, 2023</a></div>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
@@ -125,7 +192,5 @@
     <script src="assets/js/app.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/script.js"></script>
-</body>
-</html>
 </body>
 </html>
