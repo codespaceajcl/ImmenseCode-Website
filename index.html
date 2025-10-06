@@ -341,7 +341,7 @@
                         <h2 class="sec-title text-white">Need A Consultation?</h2>
                     </div>
                 </div>
-                <div class="col-md-auto text-center"><a href="shop-details.html" class="ot-btn style3">Let&#39;s Get Started</a></div>
+                <div class="col-md-auto text-center"><a href="contact.html" class="ot-btn style3">Let&#39;s Get Started</a></div>
             </div>
         </div>
     </section>
@@ -355,7 +355,6 @@
                         <input class="form-control" type="email" placeholder="Enter your email" required="">
                         <button type="submit" class="ot-btn">Subscribe</button>
                     </form>
-                    <p class="box-text">We will not spam you, we promise*</p>
                 </div>
             </div>
         </div>
@@ -428,6 +427,20 @@
     <script src="assets/js/app.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/script.js"></script>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>emailjs.init("Ub09oc3dX7bpPp1Dz");</script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            emailjs.sendForm('service_oru2jpf', 'template_h8umkvu', this)
+            .then(function() {
+                alert('Message sent!');
+                document.getElementById('contact-form').reset();
+            }, function(error) {
+                alert('Failed to send: ' + error.text);
+            });
+        });
+    </script>
 </body>
 <!-- Mirrored from html.onertheme.com/tronix/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 11:07:25 GMT -->
 
